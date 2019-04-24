@@ -89,8 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            new Container(
+              padding: new EdgeInsets.all(
+                // Just like you'd use Theme.of or MediaQuery.of
+                LayoutThemeContainer.of(context).spacingUnit,
+              ),
+              decoration: new BoxDecoration(
+                color: Colors.cyanAccent,
+              ),
+              child: new Text('You have pushed the button this many times:'),
             ),
             Text(
               "Example of body2",

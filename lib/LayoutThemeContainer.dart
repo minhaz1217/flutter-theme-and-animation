@@ -13,8 +13,8 @@ class LayoutThemeContainer extends StatefulWidget{
 }
 class LayoutThemeState extends State<LayoutThemeContainer> {
 
-  double get spacingUnit => 10.0;
-  
+  double get spacingUnit => 20.0;
+
   @override
   Widget build(BuildContext context) {
     return new _InheritedStateContainer(
