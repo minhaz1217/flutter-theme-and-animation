@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_theme_and_animation/LayoutThemeContainer.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,15 +8,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      //debugShowMaterialGrid: true,
-      title: 'Flutter Demo',
-      theme: Theme.of(context).copyWith(
-        primaryColor: Colors.amber,
-        textTheme: Typography().black,
+    return LayoutThemeContainer(
+      child: new MaterialApp(
+        debugShowCheckedModeBanner: false,
+        //debugShowMaterialGrid: true,
+        title: 'Flutter Demo',
+        theme: Theme.of(context).copyWith(
+          primaryColor: Colors.amber,
+          textTheme: Typography().black,
+        ),
+        home: MyHomePage(title: 'Flutter Theme and Animation'),
       ),
-      home: MyHomePage(title: 'Flutter Theme and Animation'),
     );
   }
 }
