@@ -11,12 +11,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //debugShowMaterialGrid: true,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
+      theme: Theme.of(context).copyWith(
+        primaryColor: Colors.amber,
         textTheme: Theme.of(context).textTheme.copyWith(
           body1: new TextStyle(
-            color: Colors.green,
+            color: Colors.lightBlue,
+          ),
+          body2: new TextStyle(
+            color: Colors.pink,
+            fontSize: 24.0
           ),
         ),
       ),
@@ -93,6 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
+            ),
+            Text(
+              "Example of body2",
+              style: Theme.of(context).textTheme.body2,
             ),
             Text(
               '$_counter',
