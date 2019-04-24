@@ -91,8 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             new Container(
               padding: new EdgeInsets.all(
-                // Just like you'd use Theme.of or MediaQuery.of
-                LayoutThemeContainer.of(context).spacingUnit,
+                LayoutThemeState.matGridUnit(scale:16),
               ),
               decoration: new BoxDecoration(
                 color: Colors.cyanAccent,

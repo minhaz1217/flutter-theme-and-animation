@@ -14,7 +14,12 @@ class LayoutThemeContainer extends StatefulWidget{
 class LayoutThemeState extends State<LayoutThemeContainer> {
 
   double get spacingUnit => 20.0;
+  static const double _matGridUnit = 8.0;
 
+  static double matGridUnit({scale = 1}) {
+    assert(scale % .5 == 0);
+    return _matGridUnit * scale;
+  }
   @override
   Widget build(BuildContext context) {
     return new _InheritedStateContainer(
