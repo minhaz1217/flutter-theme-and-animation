@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
-        textTheme: new TextTheme(
+        textTheme: Theme.of(context).textTheme.copyWith(
           body1: new TextStyle(
-            color: Colors.red,
+            color: Colors.green,
           ),
         ),
       ),
