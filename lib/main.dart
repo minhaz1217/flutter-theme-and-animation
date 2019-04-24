@@ -13,15 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: Theme.of(context).copyWith(
         primaryColor: Colors.amber,
-        textTheme: Theme.of(context).textTheme.copyWith(
-          body1: new TextStyle(
-            color: Colors.lightBlue,
-          ),
-          body2: new TextStyle(
-            color: Colors.pink,
-            fontSize: 24.0
-          ),
-        ),
+        textTheme: Typography().black,
       ),
       home: MyHomePage(title: 'Flutter Theme and Animation'),
     );
