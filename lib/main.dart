@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_theme_and_animation/LayoutThemeContainer.dart';
+import 'package:flutter_theme_and_animation/ThemePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,18 +54,34 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
+  void gotoTheme(){
+    print("THEME CLICKED");
+    Navigator.push(context, MaterialPageRoute<void>(
+      builder: (BuildContext context){
+        return ThemePage("Theme Demonstration");
+      }
+    ));
+//    Navigator.push(context, MaterialPageRoute<void>(
+//      builder: (BuildContext context) {
+//        return Scaffold(
+//          appBar: AppBar(title: Text('My Page')),
+//          body: Center(
+//            child: FlatButton(
+//              child: Text('POP'),
+//              onPressed: () {
+//                Navigator.pop(context);
+//              },
+//            ),
+//          ),
+//        );
+//      },
+//    ));
+  }
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        title: Text("Title"),
+        title: Text("Flutter Theme and Animation"),
       ),
       body: Center(
       child: ListView(
@@ -72,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
             InkWell(
               highlightColor: Colors.yellow,
               splashColor: Colors.red,
-              onTap: (){print("TAPPED 1");},
+              onTap: ()=> gotoTheme(),
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 16.0,
