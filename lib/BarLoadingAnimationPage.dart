@@ -185,6 +185,9 @@ class _BarLoadingAnimationState extends State<BarLoadingAnimation>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Loading..."),
+      ),
         body: Container(child: forwardStaggeredAnimation),
     );
   }
@@ -202,7 +205,7 @@ class Bar extends StatelessWidget {
       height: 15.0,
       margin: new EdgeInsets.only(left: marginLeft, right: marginRight),
       decoration: new BoxDecoration(
-        color: const Color.fromRGBO(0, 0, 255, 1.0),
+        color: const Color.fromRGBO(245, 0, 0, 1.0),
         borderRadius: new BorderRadius.circular(10.0),
         boxShadow: [
           new BoxShadow(
