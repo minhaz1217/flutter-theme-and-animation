@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_theme_and_animation/AnimationPage.dart';
 import 'package:flutter_theme_and_animation/LayoutThemeContainer.dart';
 import 'package:flutter_theme_and_animation/ThemePage.dart';
 
@@ -77,6 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
 //      },
 //    ));
   }
+
+  void gotoAnimation(){
+    print("ANIMATION CLICKED");
+    Navigator.push(context, MaterialPageRoute<void>(
+        builder: (BuildContext context){
+          return AnimationPage("Animation");
+        }));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             InkWell(
               highlightColor: Colors.yellow,
               splashColor: Colors.red,
-              onTap: (){print("TAPPED 2");},
+              onTap: (){gotoAnimation();},
               child: Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: 16.0,
