@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_theme_and_animation/AnimationPage.dart';
+import 'package:flutter_theme_and_animation/BarLoadingAnimationPage.dart';
 import 'package:flutter_theme_and_animation/LayoutThemeContainer.dart';
 import 'package:flutter_theme_and_animation/ThemePage.dart';
 
@@ -43,18 +44,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
   void gotoTheme(){
     print("THEME CLICKED");
     Navigator.push(context, MaterialPageRoute<void>(
@@ -84,6 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(context, MaterialPageRoute<void>(
         builder: (BuildContext context){
           return AnimationPage("Animation");
+        }));
+  }
+  void gotoBarLoadingAnimation(){
+    print("Bar Loading CLICKED");
+    Navigator.push(context, MaterialPageRoute<void>(
+        builder: (BuildContext context){
+          return BarLoadingAnimationPage("Bar Loading Animation");
         }));
   }
   @override
@@ -126,6 +122,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Center(
                   child: Text(
                     "Animation",
+                    style: TextStyle(
+                      fontSize: 24.0,
+                    ),),
+                ),
+              ),
+            ),
+            Divider( color: Colors.black,),
+            InkWell(
+              highlightColor: Colors.yellow,
+              splashColor: Colors.red,
+              onTap: (){gotoBarLoadingAnimation();},
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 50.0
+                ),
+                child: Center(
+                  child: Text(
+                    "Bar Loading Animation",
                     style: TextStyle(
                       fontSize: 24.0,
                     ),),
